@@ -48,12 +48,8 @@
     </button>
   </nav>
 
-  <!-- TODO(Kechun): optional photo. Add assets/img/kechun.webp (square, ~240px) and uncomment.
-  <img class="portrait" src="/assets/img/kechun.webp" width="120" height="120" alt="Kechun Wu">
-  -->
   <h1>Kechun Wu <span class="pron">(KUH-chwun)</span></h1>
 
-  <!-- TODO(Kechun): this intro is a plain draft. Rewrite it in your own voice. -->
   <p class="intro">I study economics and computer science at Duke. At UBS Global Markets this summer I built a pre-open market dashboard that 30+ traders and salespeople used before each open. Now I build research tools that check their own numbers before they show them.</p>
 
   <p class="contact">
@@ -77,7 +73,7 @@
   <article class="entry" id="earnings-desk">
     <h3>Earnings Desk</h3>
     <p class="question">How often can you trust an AI-written earnings note?</p>
-    <p class="finding"><strong>Finding:</strong> across 50 company-quarters and 1,001 claims, 99.6% of 734 numeric claims matched the SEC’s XBRL data. Quotes were weaker: 85.7% of 70 matched the press release word for word. The verifier caught all 1,957 errors I injected to test it.</p>
+    <p class="finding"><strong>Finding:</strong> across 50 company-quarters and 1,001 claims, 99.6% of 734 numeric claims checked out: 494 of 497 recomputed from the SEC’s XBRL data, and 237 figures with no XBRL equivalent (non-GAAP, guidance) found as stated in the cited press-release paragraph. Quotes were weaker: 85.7% of 70 matched the press release word for word. As a test of the verifier’s own logic, it caught all 1,957 errors injected into verified claims.</p>
     <p>A language model reads a company’s earnings release and writes a structured note in which every sentence is a claim tied to a source: an XBRL concept and period, or a numbered paragraph of the release. Then plain code, with no AI involved, checks each claim. Numbers are recomputed from XBRL, quotes must appear word for word, and every citation must point to a paragraph that exists and contains the claim’s figures.</p>
     <p class="limit"><em>Limitation:</em> it reads filings and press releases, not earnings-call transcripts, so anything said only on the call is out of reach.</p>
 
@@ -130,6 +126,7 @@
         <div class="panel" id="p-rpo" data-status="unsupported">
           <p class="panel-verdict">✗ Unsupported: the number isn’t in the cited source</p>
           <p>The note cites paragraph P19, which reports U.S. commercial remaining deal value of $6.517 billion. The figure $4.9 billion appears nowhere in it.</p>
+          <p>The fact itself is right: the 10-Q reports $4.9 billion at both June 30 and September 30. The citation is what fails, and a claim is only marked verified when its source supports it.</p>
           <p class="panel-src"><a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000045/a2026q3ex991pressrelease.htm">Press release, Exhibit 99.1 →</a></p>
         </div>
       </div>
@@ -144,7 +141,7 @@
   <article class="entry" id="ai-adoption-tracker">
     <h3>AI Adoption Tracker</h3>
     <p class="question">Do developer-adoption signals lead revenue for data-infrastructure companies?</p>
-    <p class="finding"><strong>Finding:</strong> not detectably. npm downloads move with revenue (r ≈ +0.5 with company fixed effects) but just as strongly at lag zero as at any lead, which points to a shared growth trend rather than a leading indicator. Company by company, 0 of 55 pre-registered tests reach p &lt; 0.05, against about 2.8 expected by chance, and hiring-post share shows nothing at any lag.</p>
+    <p class="finding"><strong>Finding:</strong> no lead survives the pre-registered tests, but the data can’t rule one out. npm downloads move with revenue (r ≈ +0.5 with company fixed effects, flat across lags), mostly through a shared growth trend. Removing quarter-wide effects leaves a modest lead-shaped pattern (r ≈ +0.3 two to three quarters ahead) that doesn’t survive the correction for testing five lags. Company by company, 0 of 55 tests reach p &lt; 0.05, and hiring-post share shows nothing at any lag.</p>
     <p>The tracker lines up weekly npm and PyPI downloads, the share of Hacker News “Who is hiring?” posts that mention each tool, and GitHub activity against quarterly revenue from SEC XBRL for Snowflake, Datadog, MongoDB, Confluent, Elastic and Cloudflare. The tests and verdict rules were fixed in code before the data was pulled. P-values use an effective sample size because year-over-year series are strongly autocorrelated.</p>
     <p class="limit"><em>Limitation:</em> samples are small. Each company-level correlation rests on an effective sample of roughly 3 to 11 observations, so a real but modest lead could be missed.</p>
 
@@ -166,9 +163,9 @@
   <article class="entry" id="morning-brief">
     <h3>Morning Brief</h3>
     <p class="question">What would a pre-open brief look like if it checked its own data before showing it?</p>
-    <p class="finding"><strong>Finding:</strong> over about 500 shared trading days, Yahoo’s and FRED’s VIX closes matched on every day but one. On Feb 6, 2026 Yahoo said 20.37 and FRED said 17.76. The reconciliation check now fails on a gap like that, and the page replays the day so you can watch it happen.</p>
-    <p>A public rebuild of the dashboard from my internship, using only free public data. Each weekday before the open, a scheduled job pulls 21 instruments across equities, rates, FX and commodities and checks them for freshness, completeness, gaps, implausible moves, frozen feeds and disagreement with FRED or the ECB before anything is shown. A language model writes up to five news bullets, each linked to the official headlines it cites.</p>
-    <p class="limit"><em>Limitation:</em> 13 of the 21 instruments have only one source, so a wrong but plausible price there can’t be caught by reconciliation.</p>
+    <p class="finding"><strong>Finding:</strong> over 545 shared trading days (Sep 2024 to Oct 2026), Yahoo’s and FRED’s VIX closes matched on every day but one. On Feb 6, 2026 Yahoo said 20.37 and FRED said 17.76. The reconciliation check now fails on a gap like that, and the page replays the day so you can watch it happen.</p>
+    <p>A public rebuild of the dashboard from my internship, using only free public data. A scheduled job, meant to run each weekday before the open, pulls 21 instruments across equities, rates, FX and commodities and checks them for freshness, completeness, gaps, implausible moves, frozen feeds and disagreement with FRED or the ECB before anything is shown. A language model writes up to five news bullets, each linked to the official headlines it cites.</p>
+    <p class="limit"><em>Limitation:</em> 13 of the 21 instruments have only one source, so a wrong but plausible price there can’t be caught by reconciliation. And the pre-open trigger isn’t reliable yet: so far most refreshes have run after the open, as the page’s track record shows.</p>
 
     <figure class="breakout shot">
       <img src="/assets/img/morning-brief-checks-1200.webp" srcset="/assets/img/morning-brief-checks-1200.webp 1200w, /assets/img/morning-brief-checks.webp 2400w" sizes="(max-width: 992px) calc(100vw - 32px), 960px" width="1200" height="328" loading="lazy" decoding="async"
@@ -212,15 +209,13 @@
 <!-- ===================== ABOUT ===================== -->
 <section id="about" class="section">
   <h2>About</h2>
-  <!-- TODO(Kechun): these paragraphs are drawn from your earlier About text. Adjust the wording so it sounds like you. -->
   <p>I’ll graduate from Duke in May 2027 with a B.S. in Economics and a B.S. in Computer Science, concentrating in AI and machine learning. I’m most interested in technology itself: how AI products get built, how people actually adopt them, and what that changes for the companies involved. On campus I’m President of Duke Scholars of Finance and Co-President of Duke’s chapter of Alpha Kappa Psi.</p>
   <p>I speak Mandarin natively and French proficiently. I studied in Aix-en-Provence and Paris, with all of my coursework in French, and in New York with Duke in New York. Away from a keyboard I train with Duke Club Triathlon, hike, and watch French cinema.</p>
 </section>
 </main>
 
 <footer class="colophon">
-  <!-- TODO(Kechun): adjust the colophon wording if you like. -->
-  <p>Built by hand-editing HTML with help from Claude Code · type set in Newsreader and JetBrains Mono · live data from my own projects · last updated <time data-build>2026-11-04</time></p>
+  <p>Plain HTML, written with Claude Code as a coding assistant · type set in Newsreader and JetBrains Mono · live data from my own projects · last updated <time data-build>2026-11-04</time></p>
   <p><a href="mailto:kechun.wu@duke.edu">kechun.wu@duke.edu</a></p>
 </footer>
 

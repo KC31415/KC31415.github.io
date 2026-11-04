@@ -42,3 +42,7 @@ only work on the deployed site.
 ```bash
 python3 scripts/check_links.py .
 ```
+
+## How this was built
+
+Plain HTML, CSS and JavaScript, written with Claude Code, Anthropic's AI coding assistant (see the `Co-Authored-By` lines in the commit history). The page footer says the same.
