@@ -1,0 +1,52 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Daily, after the AI Adoption Tracker and Morning Brief have published. Refreshes the
+    # SDK-share snapshot and the "last updated" date. (Morning Brief's strip is fetched live.)
+    - cron: "41 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refresh data snapshot (keeps the committed copy on any failure)
+        run: python3 scripts/snapshot.py
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+          tar --exclude='./.git' --exclude='./.github' --exclude='./scripts' --exclude='./_site' --exclude='./README.md' -cf - . | tar -xf - -C _site
+          sed -i "s|<time data-build>[^<]*</time>|<time data-build>$(date -u +%Y-%m-%d)</time>|" _site/index.html
+
+      - name: Check links
+        run: python3 scripts/check_links.py _site --external
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
