@@ -1,25 +1,44 @@
 # kc31415.github.io
 
-Personal portfolio site for Kechun Wu, served at https://kc31415.github.io.
+Kechun Wu's personal site, served at https://kc31415.github.io.
 
-Plain HTML/CSS with one small script (theme toggle). No framework and no build step: GitHub Pages serves the files as they are.
+Plain HTML, CSS and vanilla JS. No framework, no build step, no trackers.
 
-## Files
+## Layout
 
-| File | What it is |
+| Path | What it is |
 |---|---|
-| `index.html` | The whole page. Project cards sit between `PROJECT CARDS: EDIT HERE` and `END PROJECT CARDS`. |
-| `styles.css` | Styles, including light/dark colors (top of file). |
-| `script.js` | Light/dark toggle and footer year. |
-| `assets/img/` | Project screenshots, social preview image (`og.png`), touch icon. |
-| `favicon.svg` | Browser tab icon. |
-| `404.html` | Not-found page. |
-| `resume.pdf` | Resume linked from the page. Replace the file to update it. |
+| `index.html` | The whole page. Each project is one `<article class="entry">` under "SELECTED WORK". |
+| `assets/site.css` | Styles: color tokens at the top (light, then dark), print stylesheet at the bottom. |
+| `assets/site.js` | Theme toggle, live Morning Brief strip, Earnings Desk demo, SDK chart, section reveal. |
+| `assets/fonts/` | Newsreader and JetBrains Mono, subset and self-hosted (SIL OFL; licenses included). |
+| `assets/img/` | Morning Brief screenshot (WebP, 1x and 2x), social preview `og.png`, touch icon. |
+| `data/sdk-share.json` | Snapshot of the AI Adoption Tracker's SDK download shares, used by the chart. |
+| `scripts/snapshot.py` | Rebuilds `data/sdk-share.json` from the tracker's published CSV. |
+| `scripts/check_links.py` | Link checker run in CI. |
+| `.github/workflows/pages.yml` | Deploys to GitHub Pages on push and daily; refreshes the snapshot and stamps "last updated". |
 
-## Common edits
+## Live data
 
-- **Experience / About:** plain HTML sections in `index.html` (`EXPERIENCE`, `ABOUT`), copied from the resume.
-- **Resume:** replace `resume.pdf` in the repository root.
-- **Projects:** each project is one `<article class="card">` block. Copy a block to add a project.
-- **Screenshots:** drop an image in `assets/img/` (16:10, e.g. 1200x750, looks best; the top is kept if it's taller) and update that card's `<img src>`. AI Adoption Tracker still uses a placeholder (`ai-adoption-tracker.svg`).
-- **Preview locally:** open `index.html` in a browser, or run `python3 -m http.server` and visit http://localhost:8000.
+- **Morning Brief strip** (top of page): the browser fetches `/morning-brief/latest.json`, which the
+  morning-brief repo publishes. If the fetch fails the strip is hidden; if the data is more than one business
+  day old it turns grey and says "last updated".
+- **SDK chart**: `data/sdk-share.json`, refreshed daily by the workflow from
+  `/ai-adoption-tracker/data/entity_weekly.csv`. If that download fails, the committed copy is kept.
+- **Earnings Desk demo**: a fixed excerpt from the published PLTR FY2026 Q3 note (claims, verdicts and
+  source details copied from `earnings-desk/data/notes/PLTR/0001321655-26-000045.json`).
+
+## Local preview
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open http://localhost:8000. The live strip and project links need the other repos' sites, so they
+only work on the deployed site.
+
+## Checks
+
+```bash
+python3 scripts/check_links.py .
+```

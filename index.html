@@ -1,310 +1,230 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kechun Wu | Economics &amp; Computer Science, Duke '27</title>
-  <meta name="description" content="Kechun Wu: Duke '27, B.S. Economics and B.S. Computer Science (AI/ML). Interested in technology and AI; projects in market data, SEC filings and alternative data.">
-  <meta name="author" content="Kechun Wu">
-  <link rel="canonical" href="https://kc31415.github.io/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kechun Wu</title>
+<meta name="description" content="Kechun Wu studies economics and computer science at Duke and builds research tools that check their own numbers: verified AI earnings notes, an alternative-data study, and a self-checking pre-open market brief.">
+<meta name="author" content="Kechun Wu">
+<link rel="canonical" href="https://kc31415.github.io/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1A17" media="(prefers-color-scheme: dark)">
 
-  <!-- Open Graph / social -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kc31415.github.io/">
-  <meta property="og:title" content="Kechun Wu | Economics &amp; Computer Science, Duke '27">
-  <meta property="og:description" content="Projects in market data, SEC filings and alternative data.">
-  <meta property="og:image" content="https://kc31415.github.io/assets/img/og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kechun Wu">
+<meta property="og:url" content="https://kc31415.github.io/">
+<meta property="og:title" content="Kechun Wu">
+<meta property="og:description" content="Research tools that check their own numbers: verified AI earnings notes, an alternative-data study, and a self-checking pre-open market brief.">
+<meta property="og:image" content="https://kc31415.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kechun Wu. An AI-written earnings note with each claim marked verified, mismatched or sourced against SEC data.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kechun Wu">
+<meta name="twitter:description" content="Research tools that check their own numbers.">
+<meta name="twitter:image" content="https://kc31415.github.io/assets/img/og.png">
 
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0e1318" media="(prefers-color-scheme: dark)">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
-
-  <!-- Apply saved theme before paint to avoid a flash -->
-  <script>
-    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
-  <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/newsreader-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+  document.documentElement.classList.add("js");
+</script>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#work">Skip to selected work</a>
 
-  <header class="site-header">
-    <div class="wrap nav">
-      <a class="brand" href="#top"><span class="mark" aria-hidden="true">KW</span>Kechun Wu</a>
-      <nav aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#about" class="hide-sm">About</a>
-        <a href="#contact">Contact</a>
-        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
-          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
-        </button>
-      </nav>
-    </div>
-  </header>
+<header class="masthead">
+  <nav class="topbar" aria-label="Site">
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#about">About</a>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="light / dark theme">
+      <span data-mode="light">light</span> / <span data-mode="dark">dark</span>
+    </button>
+  </nav>
 
-  <main id="main">
-    <!-- ===================== INTRO ===================== -->
-    <section id="top" class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-text">
-          <p class="eyebrow">Duke University &middot; Class of 2027</p>
-          <h1>Kechun Wu</h1>
-          <p class="lede">
-            I study Economics and Computer Science (AI/ML concentration) at Duke. I'm interested in
-            technology and AI: building with it, understanding how people adopt it, and what it changes
-            for products and companies. My projects turn market data, SEC filings and alternative data
-            into working tools.
-          </p>
-          <div class="cta">
-            <a class="btn primary" href="#projects">View projects</a>
-            <a class="btn" href="resume.pdf">Resume (PDF)</a>
-            <a class="btn icon-btn" href="https://www.linkedin.com/in/kechun-wu/" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.95c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4z"/></svg>
-            </a>
-            <a class="btn icon-btn" href="https://github.com/KC31415" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
-            </a>
-          </div>
-        </div>
+  <!-- TODO(Kechun): optional photo. Add assets/img/kechun.webp (square, ~240px) and uncomment.
+  <img class="portrait" src="/assets/img/kechun.webp" width="120" height="120" alt="Kechun Wu">
+  -->
+  <h1>Kechun Wu <span class="pron">(KUH-chwun)</span></h1>
 
-        <aside class="glance" aria-label="At a glance">
-          <dl>
-            <div><dt>Education</dt><dd>Duke University<br><span>B.S. Economics &amp; B.S. Computer Science (AI/ML), May 2027</span></dd></div>
-            <div><dt>Most recent</dt><dd>UBS<br><span>Global Markets Sales &amp; Trading Summer Intern, 2026</span></dd></div>
-            <div><dt>Interests</dt><dd>Technology &amp; AI<br><span>AI product &amp; strategy &middot; data-driven research &middot; tech and markets</span></dd></div>
-            <div><dt>Tools</dt><dd>Python, SQL, kdb+/q<br><span>pandas, NumPy, scikit-learn, Git, Excel</span></dd></div>
+  <!-- TODO(Kechun): this intro is a plain draft. Rewrite it in your own voice. -->
+  <p class="intro">I study economics and computer science at Duke. At UBS Global Markets this summer I built a pre-open market dashboard that 30+ traders and salespeople used before each open. Now I build research tools that check their own numbers before they show them.</p>
+
+  <p class="contact">
+    <a href="mailto:kechun.wu@duke.edu">Email</a> ·
+    <!-- TODO(Kechun): confirm this LinkedIn URL (taken from your resume). -->
+    <a href="https://www.linkedin.com/in/kechun-wu/">LinkedIn</a> ·
+    <a href="https://github.com/KC31415">GitHub</a> ·
+    <a href="/resume.pdf">Resume (PDF)</a>
+  </p>
+
+  <p class="live" id="live" hidden></p>
+</header>
+
+<main>
+<!-- ================================================================
+     SELECTED WORK. Each project is one <article class="entry">.
+     ================================================================ -->
+<section id="work" class="section">
+  <h2>Selected work</h2>
+
+  <!-- ---------- Earnings Desk ---------- -->
+  <article class="entry" id="earnings-desk">
+    <h3>Earnings Desk</h3>
+    <p class="question">How often can you trust an AI-written earnings note?</p>
+    <p class="finding"><strong>Finding:</strong> across 50 company-quarters and 1,001 claims, 99.6% of 734 numeric claims matched the SEC’s XBRL data. Quotes were weaker: 85.7% of 70 matched the press release word for word. The verifier caught all 1,957 errors I injected to test it.</p>
+    <p>A language model reads a company’s earnings release and writes a structured note in which every sentence is a claim tied to a source: an XBRL concept and period, or a numbered paragraph of the release. Then plain code, with no AI involved, checks each claim. Numbers are recomputed from XBRL, quotes must appear word for word, and every citation must point to a paragraph that exists and contains the claim’s figures.</p>
+    <p class="limit"><em>Limitation:</em> it reads filings and press releases, not earnings-call transcripts, so anything said only on the call is out of reach.</p>
+
+    <figure class="breakout demo" id="demo" aria-labelledby="demo-title">
+      <figcaption class="demo-head">
+        <span id="demo-title" class="demo-title">Watch it check a number.</span>
+        <span class="meta">Palantir, FY2026 Q3 note · <a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000045/0001321655-26-000045-index.htm">8-K filed 2026-11-02</a></span>
+      </figcaption>
+      <p class="demo-text">
+        <span class="claim" role="button" tabindex="0" data-status="verified" aria-controls="p-rev" aria-expanded="false">Palantir reported third-quarter revenue of $2.313 billion.<span class="mark" aria-hidden="true">✓</span><span class="sr-only"> (verified)</span></span>
+        <span class="claim" role="button" tabindex="0" data-status="verified" aria-controls="p-margin" aria-expanded="false">GAAP operating margin was 46.9%.<span class="mark" aria-hidden="true">✓</span><span class="sr-only"> (verified)</span></span>
+        <span class="claim" role="button" tabindex="0" data-status="mismatch" aria-controls="p-quote" aria-expanded="false">The CEO highlighted that U.S. commercial revenue passed U.S. government revenue for the first time.<span class="mark" aria-hidden="true">⚠&#xFE0E;</span><span class="sr-only"> (mismatch)</span></span>
+        <span class="claim" role="button" tabindex="0" data-status="sourced" aria-controls="p-tcv" aria-expanded="false">Total contract value closed grew only 6% year over year, well below revenue growth.<span class="mark" aria-hidden="true">◦</span><span class="sr-only"> (sourced)</span></span>
+        <span class="claim" role="button" tabindex="0" data-status="unsupported" aria-controls="p-rpo" aria-expanded="false">Remaining performance obligations were flat sequentially at $4.9 billion.<span class="mark" aria-hidden="true">✗</span><span class="sr-only"> (unsupported)</span></span>
+      </p>
+
+      <div class="panels" aria-live="polite">
+        <div class="panel" id="p-rev" data-status="verified">
+          <p class="panel-verdict">✓ Verified against XBRL</p>
+          <dl class="meta-grid">
+            <dt>concept</dt><dd>RevenueFromContractWithCustomerExcludingAssessedTax</dd>
+            <dt>period</dt><dd>FY2026 Q3, ended 2026-09-30</dd>
+            <dt>filed value</dt><dd>$2,313,411,000</dd>
+            <dt>note says</dt><dd>$2.313 billion</dd>
           </dl>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ===================== PROJECTS ===================== -->
-    <section id="projects" class="band">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">01</p>
-          <h2>Projects</h2>
-          <p class="section-sub">Public, working tools. Each one is a live site with its code on GitHub.</p>
+          <p class="panel-src"><a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000048/pltr-20260930.htm">10-Q for the quarter (accession 0001321655-26-000048) →</a></p>
         </div>
-
-        <!--
-          ================================================================
-          PROJECT CARDS: EDIT HERE
-          Each project is one <article class="project"> ... </article> block.
-          To add a project, copy a whole block and change the text/links.
-          To change a screenshot, put an image in assets/img/ and update
-          the <img src="..."> (1200x750 or any 16:10 image fits best).
-          ================================================================
-        -->
-        <div class="projects">
-
-          <!-- ---------- Project 1: Morning Brief ---------- -->
-          <article class="project">
-            <a class="shot" href="https://kc31415.github.io/morning-brief">
-              <img src="assets/img/morning-brief.jpg" alt="Morning Brief dashboard screenshot" width="1200" height="750" loading="lazy">
-            </a>
-            <div class="project-body">
-              <h3>Morning Brief</h3>
-              <p>A public rebuild of the pre-open market dashboard I built during my UBS Global Markets internship. It is refreshed every weekday before the open.</p>
-              <p class="shows"><strong>What it shows</strong> Building a scheduled data product that checks its own inputs (freshness, gaps, implausible moves, cross-source disagreement) before showing a number.</p>
-              <ul class="tags" aria-label="Tech stack">
-                <li>Python</li><li>pandas</li><li>Streamlit</li><li>yfinance / FRED / ECB</li><li>Claude API</li><li>GitHub Actions</li><li>Cloudflare Workers</li>
-              </ul>
-              <div class="links">
-                <a class="btn primary sm" href="https://kc31415.github.io/morning-brief">Live site</a>
-                <a class="btn sm" href="https://github.com/KC31415/morning-brief">GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- ---------- Project 2: Earnings Desk ---------- -->
-          <article class="project">
-            <a class="shot" href="https://kc31415.github.io/earnings-desk">
-              <img src="assets/img/earnings-desk.jpg" alt="Earnings Desk app screenshot" width="1200" height="750" loading="lazy">
-            </a>
-            <div class="project-body">
-              <h3>Earnings Desk</h3>
-              <p>AI-written earnings notes generated from SEC filings, where every number is checked in code against SEC XBRL data. A published scorecard tracks how accurate the notes are.</p>
-              <p class="shows"><strong>What it shows</strong> Pairing LLM-generated analysis with a deterministic, code-only verifier, and measuring how often the output can be trusted.</p>
-              <ul class="tags" aria-label="Tech stack">
-                <li>Python</li><li>pandas</li><li>SEC EDGAR / XBRL</li><li>Claude API</li><li>Streamlit</li><li>Plotly</li><li>GitHub Actions</li>
-              </ul>
-              <div class="links">
-                <a class="btn primary sm" href="https://kc31415.github.io/earnings-desk">Live site</a>
-                <a class="btn sm" href="https://github.com/KC31415/earnings-desk">GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- ---------- Project 3: AI Adoption Tracker ---------- -->
-          <article class="project">
-            <a class="shot" href="https://kc31415.github.io/ai-adoption-tracker">
-              <img src="assets/img/ai-adoption-tracker.svg" alt="AI Adoption Tracker screenshot placeholder" width="1200" height="750" loading="lazy">
-            </a>
-            <div class="project-body">
-              <h3>AI Adoption Tracker</h3>
-              <p>Tracks adoption of AI and data-infrastructure tools using alternative data: package downloads, hiring posts and GitHub activity. It tests whether these signals lead public companies' revenue.</p>
-              <p class="shows"><strong>What it shows</strong> Turning free alternative data into signals and testing them against reported revenue with statistics set up before the data was pulled.</p>
-              <ul class="tags" aria-label="Tech stack">
-                <li>Python</li><li>pandas</li><li>SciPy</li><li>npm / PyPI / GitHub APIs</li><li>SEC XBRL</li><li>Streamlit</li>
-              </ul>
-              <div class="links">
-                <a class="btn primary sm" href="https://kc31415.github.io/ai-adoption-tracker">Live site</a>
-                <a class="btn sm" href="https://github.com/KC31415/ai-adoption-tracker">GitHub</a>
-              </div>
-            </div>
-          </article>
-
+        <div class="panel" id="p-margin" data-status="verified">
+          <p class="panel-verdict">✓ Recomputed from XBRL</p>
+          <dl class="meta-grid">
+            <dt>formula</dt><dd>OperatingIncomeLoss ÷ revenue × 100</dd>
+            <dt>period</dt><dd>FY2026 Q3, ended 2026-09-30</dd>
+            <dt>filed values</dt><dd>$1,084,845,000 ÷ $2,313,411,000</dd>
+            <dt>result</dt><dd>46.89%; note says 46.9%</dd>
+          </dl>
+          <p class="panel-src"><a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000048/pltr-20260930.htm">10-Q for the quarter →</a></p>
         </div>
-        <!-- ================ END PROJECT CARDS ================ -->
-      </div>
-    </section>
-
-    <!-- ===================== EXPERIENCE ===================== -->
-    <section id="experience">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">02</p>
-          <h2>Experience</h2>
+        <div class="panel" id="p-quote" data-status="mismatch">
+          <p class="panel-verdict">⚠&#xFE0E; Mismatch: the note paraphrases a quote</p>
+          <p>Quotes must appear word for word. Paragraph P7 of the press release actually says:</p>
+          <blockquote>“Our U.S. commercial revenue has surpassed our U.S. government revenue for the first time in our company’s history.”</blockquote>
+          <p class="panel-src"><a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000045/a2026q3ex991pressrelease.htm">Press release, Exhibit 99.1 →</a></p>
         </div>
-
-        <ol class="timeline">
-          <li class="role">
-            <div class="role-meta"><span class="when">Jun &ndash; Aug 2026</span><span class="where">New York, NY</span></div>
-            <div class="role-body">
-              <h3>UBS <span>Global Markets Sales &amp; Trading Summer Intern</span></h3>
-              <ul>
-                <li>Built a daily market dashboard in Python that uses an LLM to summarize key moves in plain language; refined it through trader feedback until 30+ traders and salespeople used it before each open.</li>
-                <li>Analyzed 2.9M+ equity executions to diagnose an underperforming liquidation algorithm, isolating losses to one execution mode in high-spread, high-volatility names; the desk implemented the recommendations.</li>
-                <li>Designed a reusable AI-assisted backtesting workflow in Python and used it to build a wheat futures strategy on 13&ndash;19 years of data that held up out-of-sample.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="role">
-            <div class="role-meta"><span class="when">Jul &ndash; Aug 2025</span><span class="where">Marseille, France</span></div>
-            <div class="role-body">
-              <h3>SMILO (Small Islands Organisation) <span>Research and Strategy Intern</span></h3>
-              <ul>
-                <li>Benchmarked three paid funding-tracking platforms against an in-house build and recommended a hybrid option under $500; built the custom side with APIs, RSS feeds and scraping, automating tracking of 15+ funding sources.</li>
-                <li>Wrote a 25-page strategic report on biodiversity credit markets recommending three pilot models and market-entry plans.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="role">
-            <div class="role-meta"><span class="when">May &ndash; Jul 2025</span><span class="where">Hong Kong</span></div>
-            <div class="role-body">
-              <h3>China Resources Trust <span>Public Markets Data Engineering Intern</span></h3>
-              <ul>
-                <li>Automated daily T/T+1 reporting across 1,000+ structured trust products, refining the Python tools with users to cut reporting errors by 70%.</li>
-                <li>Built 5+ self-service Python scraping apps that 20+ colleagues used to pull market and product data on demand.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="role">
-            <div class="role-meta"><span class="when">May &ndash; Aug 2024</span><span class="where">Shenzhen, China</span></div>
-            <div class="role-body">
-              <h3>Yingke Law Firm <span>Legal Intern</span></h3>
-              <ul>
-                <li>Represented lawyers' needs in building the firm's first LLM-based legal tech tool for document review, case summaries and drafting: turned workflows into requirements, tested outputs and relayed feedback to engineers.</li>
-              </ul>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ===================== ABOUT ===================== -->
-    <section id="about" class="band">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">03</p>
-          <h2>About</h2>
+        <div class="panel" id="p-tcv" data-status="sourced">
+          <p class="panel-verdict">◦ Sourced to press release paragraph P17</p>
+          <blockquote>“Closed total contract value (“TCV”) of $2.918 billion, up 6% year-over-year”</blockquote>
+          <p>Interpretive claims are checked for a real citation, not for whether the reading is fair.</p>
+          <p class="panel-src"><a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000045/a2026q3ex991pressrelease.htm">Press release, Exhibit 99.1 →</a></p>
         </div>
-
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I'm at Duke pursuing a B.S. in Economics and a B.S. in Computer Science with a
-              concentration in AI and machine learning. I'm most interested in technology and AI itself:
-              how AI products are built, how they get adopted, and how they change the way companies
-              work. My projects apply software, data and machine learning to real questions and make
-              the results checkable, and my finance experience gives me a view of how businesses are
-              measured.
-            </p>
-            <p>
-              Outside class I'm President of Duke Scholars of Finance and Co-President of Duke's Alpha Kappa Psi
-              business fraternity, and I've studied
-              in Aix-en-Provence and Paris (all coursework in French) and with Duke in New York.
-              I speak Mandarin natively and French proficiently. Away from a screen, you'll find me
-              training with Duke Club Triathlon, hiking, or watching French cinema.
-            </p>
-          </div>
-
-          <div class="about-cards">
-            <div class="info-card">
-              <h3>Education</h3>
-              <p><strong>Duke University</strong>, Durham, NC</p>
-              <p>B.S. Economics &amp; B.S. Computer Science (AI/ML), May 2027 &middot; GPA 3.97/4.00</p>
-              <p class="muted">Coursework: Machine Learning, Linear Algebra, Econometrics and Data Science, Probability, Data Structures</p>
-              <p class="muted">Honors: SEO Career Fellow; Dean's List with Distinction (2025); Global Fellow; Mac Anderson Scholar</p>
-            </div>
-            <div class="info-card">
-              <h3>Leadership</h3>
-              <ul class="plain">
-                <li><strong>President</strong>, Duke Scholars of Finance <span class="muted">(2023&ndash;present)</span></li>
-                <li><strong>Co-President</strong>, Duke Alpha Kappa Psi <span class="muted">(2024&ndash;present)</span></li>
-                <li><strong>Head of Partnerships</strong>, Durham Community Incubator <span class="muted">(2024&ndash;25)</span></li>
-                <li><strong>Project Manager</strong>, Duke Energy and Climate Club <span class="muted">(2023&ndash;25)</span></li>
-              </ul>
-            </div>
-            <div class="info-card">
-              <h3>Skills</h3>
-              <ul class="tags">
-                <li>Python</li><li>pandas</li><li>NumPy</li><li>scikit-learn</li><li>SQL</li><li>kdb+/q</li><li>Java</li><li>C</li><li>Git</li><li>Excel</li><li>Mandarin (native)</li><li>French (proficient)</li>
-              </ul>
-            </div>
-          </div>
+        <div class="panel" id="p-rpo" data-status="unsupported">
+          <p class="panel-verdict">✗ Unsupported: the number isn’t in the cited source</p>
+          <p>The note cites paragraph P19, which reports U.S. commercial remaining deal value of $6.517 billion. The figure $4.9 billion appears nowhere in it.</p>
+          <p class="panel-src"><a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000045/a2026q3ex991pressrelease.htm">Press release, Exhibit 99.1 →</a></p>
         </div>
       </div>
-    </section>
+      <p class="legend meta">✓ verified · ⚠&#xFE0E; mismatch · ◦ sourced · ✗ unsupported. Select a sentence to see its source.</p>
+    </figure>
 
-    <!-- ===================== CONTACT ===================== -->
-    <section id="contact">
-      <div class="wrap">
-        <div class="contact-panel">
-          <div>
-            <p class="kicker">04</p>
-            <h2>Get in touch</h2>
-            <p>I'm happy to talk about research roles, these projects, or anything at the intersection of markets and AI. Email is the best way to reach me.</p>
-          </div>
-          <ul class="contact">
-            <li><a class="btn primary" href="mailto:kechun.wu@duke.edu">kechun.wu@duke.edu</a></li>
-            <li><a class="btn" href="https://www.linkedin.com/in/kechun-wu/">LinkedIn</a></li>
-            <li><a class="btn" href="https://github.com/KC31415">GitHub</a></li>
-            <li><a class="btn" href="resume.pdf">Resume (PDF)</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
+    <p class="stack">python · pandas · sec edgar &amp; xbrl apis · claude api · jinja2 · plotly.js · github actions &amp; pages</p>
+    <p class="links"><a href="/earnings-desk/research.html">Read the write-up →</a> <a href="/earnings-desk/">Live site</a> <a href="https://github.com/KC31415/earnings-desk">Code</a></p>
+  </article>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>&copy; <span id="year">2026</span> Kechun Wu</p>
-      <p><a href="#top">Back to top &uarr;</a></p>
-    </div>
-  </footer>
+  <!-- ---------- AI Adoption Tracker ---------- -->
+  <article class="entry" id="ai-adoption-tracker">
+    <h3>AI Adoption Tracker</h3>
+    <p class="question">Do developer-adoption signals lead revenue for data-infrastructure companies?</p>
+    <p class="finding"><strong>Finding:</strong> not detectably. npm downloads move with revenue (r ≈ +0.5 with company fixed effects) but just as strongly at lag zero as at any lead, which points to a shared growth trend rather than a leading indicator. Company by company, 0 of 55 pre-registered tests reach p &lt; 0.05, against about 2.8 expected by chance, and hiring-post share shows nothing at any lag.</p>
+    <p>The tracker lines up weekly npm and PyPI downloads, the share of Hacker News “Who is hiring?” posts that mention each tool, and GitHub activity against quarterly revenue from SEC XBRL for Snowflake, Datadog, MongoDB, Confluent, Elastic and Cloudflare. The tests and verdict rules were fixed in code before the data was pulled. P-values use an effective sample size because year-over-year series are strongly autocorrelated.</p>
+    <p class="limit"><em>Limitation:</em> samples are small. Each company-level correlation rests on an effective sample of roughly 3 to 11 observations, so a real but modest lead could be missed.</p>
 
-  <script src="script.js" defer></script>
+    <figure class="breakout chart" id="sdk-chart" hidden>
+      <figcaption class="chart-head">
+        <span class="chart-title">Along the way: which official AI SDK developers download</span>
+        <span class="meta">Share of npm downloads among the OpenAI, Anthropic, Google Gen AI and Mistral SDKs, 4-week average</span>
+      </figcaption>
+      <div class="chart-readout meta" id="sdk-readout" aria-hidden="true">&nbsp;</div>
+      <div class="chart-svg" id="sdk-svg"></div>
+      <p class="meta chart-source">Source: <a href="/ai-adoption-tracker/ai-sdk.html">AI Adoption Tracker</a>, npm downloads API · data as of <time id="sdk-asof"></time></p>
+    </figure>
+
+    <p class="stack">python · pandas · scipy · npm, pypi, hn algolia &amp; github apis · sec xbrl · jinja2 · plotly.js · github actions &amp; pages</p>
+    <p class="links"><a href="/ai-adoption-tracker/lead-lag.html">Read the write-up →</a> <a href="/ai-adoption-tracker/">Live site</a> <a href="https://github.com/KC31415/ai-adoption-tracker">Code</a></p>
+  </article>
+
+  <!-- ---------- Morning Brief ---------- -->
+  <article class="entry" id="morning-brief">
+    <h3>Morning Brief</h3>
+    <p class="question">What would a pre-open brief look like if it checked its own data before showing it?</p>
+    <p class="finding"><strong>Finding:</strong> over about 500 shared trading days, Yahoo’s and FRED’s VIX closes matched on every day but one. On Feb 6, 2026 Yahoo said 20.37 and FRED said 17.76. The reconciliation check now fails on a gap like that, and the page replays the day so you can watch it happen.</p>
+    <p>A public rebuild of the dashboard from my internship, using only free public data. Each weekday before the open, a scheduled job pulls 21 instruments across equities, rates, FX and commodities and checks them for freshness, completeness, gaps, implausible moves, frozen feeds and disagreement with FRED or the ECB before anything is shown. A language model writes up to five news bullets, each linked to the official headlines it cites.</p>
+    <p class="limit"><em>Limitation:</em> 13 of the 21 instruments have only one source, so a wrong but plausible price there can’t be caught by reconciliation.</p>
+
+    <figure class="breakout shot">
+      <img src="/assets/img/morning-brief-checks-1200.webp" srcset="/assets/img/morning-brief-checks-1200.webp 1200w, /assets/img/morning-brief-checks.webp 2400w" sizes="(max-width: 992px) calc(100vw - 32px), 960px" width="1200" height="328" loading="lazy" decoding="async"
+           alt="Morning Brief check summary: “All data checks passed”, 129 checks across 21 instruments with 8 cross-checked against FRED or the ECB, and six tiles with 20-day sparklines for S&amp;P 500 futures, US 10-year yield, dollar index, WTI crude, gold and VIX.">
+      <figcaption class="meta">The brief of Wed Nov 4, 2026: check summary and cross-asset tiles.</figcaption>
+    </figure>
+
+    <p class="stack">python · pandas · sqlite · yfinance, fred &amp; ecb data · claude api · jinja2 · chart.js · github actions &amp; pages · cloudflare workers</p>
+    <p class="links"><a href="https://github.com/KC31415/morning-brief#why-i-built-this">Read the write-up →</a> <a href="/morning-brief/">Live site</a> <a href="https://github.com/KC31415/morning-brief">Code</a></p>
+  </article>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience" class="section">
+  <h2>Experience</h2>
+  <ol class="cv">
+    <li>
+      <time class="meta">Jun–Aug 2026</time>
+      <p class="cv-head"><span class="cv-role">Global Markets Sales &amp; Trading Summer Intern</span>, UBS, New York</p>
+      <p>Analyzed 2.9M+ equity executions to find where an underperforming liquidation algorithm lost money; the desk implemented my recommendations.</p>
+    </li>
+    <li>
+      <time class="meta">Jul–Aug 2025</time>
+      <p class="cv-head"><span class="cv-role">Research and Strategy Intern</span>, SMILO (Small Islands Organisation), Marseille</p>
+      <p>Benchmarked paid funding-tracking platforms against an in-house build, built the in-house side with APIs, RSS feeds and scraping, and wrote a 25-page report on biodiversity credit markets.</p>
+    </li>
+    <li>
+      <time class="meta">May–Jul 2025</time>
+      <p class="cv-head"><span class="cv-role">Public Markets Data Engineering Intern</span>, China Resources Trust, Hong Kong</p>
+      <p>Automated daily T/T+1 reporting across 1,000+ structured trust products and cut reporting errors by 70%.</p>
+    </li>
+    <li>
+      <time class="meta">May–Aug 2024</time>
+      <p class="cv-head"><span class="cv-role">Legal Intern</span>, Yingke Law Firm, Shenzhen</p>
+      <p>Turned lawyers’ workflows into requirements for the firm’s first LLM-based legal tool, then tested its outputs with them.</p>
+    </li>
+  </ol>
+  <p class="more"><a href="/resume.pdf">Full detail in my resume →</a></p>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="section">
+  <h2>About</h2>
+  <!-- TODO(Kechun): these paragraphs are drawn from your earlier About text. Adjust the wording so it sounds like you. -->
+  <p>I’ll graduate from Duke in May 2027 with a B.S. in Economics and a B.S. in Computer Science, concentrating in AI and machine learning. I’m most interested in technology itself: how AI products get built, how people actually adopt them, and what that changes for the companies involved. On campus I’m President of Duke Scholars of Finance and Co-President of Duke’s chapter of Alpha Kappa Psi.</p>
+  <p>I speak Mandarin natively and French proficiently. I studied in Aix-en-Provence and Paris, with all of my coursework in French, and in New York with Duke in New York. Away from a keyboard I train with Duke Club Triathlon, hike, and watch French cinema.</p>
+</section>
+</main>
+
+<footer class="colophon">
+  <!-- TODO(Kechun): adjust the colophon wording if you like. -->
+  <p>Built by hand-editing HTML with help from Claude Code · type set in Newsreader and JetBrains Mono · live data from my own projects · last updated <time data-build>2026-11-04</time></p>
+  <p><a href="mailto:kechun.wu@duke.edu">kechun.wu@duke.edu</a></p>
+</footer>
+
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

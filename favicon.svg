@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#1f3a5f"/>
-  <text x="32" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">KW</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><style>rect{fill:#FBFAF7}g{fill:#1A1916}@media (prefers-color-scheme:dark){rect{fill:#1C1A17}g{fill:#ECE7DD}}</style><rect width="64" height="64" rx="12"/><g transform="translate(10.25 40.26) scale(0.01171 -0.01171)"><path transform="translate(0 0)" d="M1472 80 1612 34V0H946V34L1104 76L568 700H431V781H573L1209 1331L1032 1376V1410H1487V1376L1318 1331L652 762L783 886ZM519 1330V81L682 34V0H64V34L228 81V1330L64 1376V1410H683V1376Z"/><path transform="translate(1538 0)" d="M1080 1166 657 -13H528L125 1327L-30 1376V1410H610V1376L435 1329L739 275L672 238L1084 1423H1219L1663 265L1602 255L1874 1327L1697 1376V1410H2112V1376L1961 1325L1598 -13H1469L1013 1137Z"/></g></svg>
