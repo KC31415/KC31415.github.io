@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build data/sdk-share.json from the AI Adoption Tracker's published data.
 
-Source: https://kc31415.github.io/ai-adoption-tracker/data/entity_weekly.csv
+Source: https://kechunwu.github.io/ai-adoption-tracker/data/entity_weekly.csv
 (npm downloads per package, with a 4-week moving average in column `ma4`).
 
 Output: weekly share of combined npm downloads (4-week average) for the official
@@ -23,7 +23,7 @@ import sys
 import urllib.request
 from datetime import datetime, timezone
 
-URL = "https://kc31415.github.io/ai-adoption-tracker/data/entity_weekly.csv"
+URL = "https://kechunwu.github.io/ai-adoption-tracker/data/entity_weekly.csv"
 OUT = os.path.join(os.path.dirname(__file__), "..", "data", "sdk-share.json")
 ENTITIES = {"openai": "OpenAI", "anthropic": "Anthropic", "google-genai": "Google Gen AI", "mistralai": "Mistral"}
 START = "2024-01-01"
@@ -33,7 +33,7 @@ def load(csv_path):
     if csv_path:
         with open(csv_path, newline="") as f:
             return f.read()
-    req = urllib.request.Request(URL, headers={"User-Agent": "kc31415.github.io snapshot"})
+    req = urllib.request.Request(URL, headers={"User-Agent": "kechunwu.github.io snapshot"})
     with urllib.request.urlopen(req, timeout=30) as r:
         return r.read().decode("utf-8")
 
@@ -57,7 +57,7 @@ def build(text):
     return {
         "title": "Share of npm downloads among official AI SDKs (4-week average)",
         "source": "AI Adoption Tracker, npm downloads API",
-        "source_url": "https://kc31415.github.io/ai-adoption-tracker/ai-sdk.html",
+        "source_url": "https://kechunwu.github.io/ai-adoption-tracker/ai-sdk.html",
         "data_as_of": rows[-1][0],
         "snapshot_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"),
         "labels": ENTITIES,

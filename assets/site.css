@@ -1,4 +1,4 @@
-/* kc31415.github.io — one serif, one mono, one accent. */
+/* kechunwu.github.io — one serif, one mono, one accent. */
 
 @font-face { font-family: "Newsreader"; src: url("/assets/fonts/newsreader-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Newsreader"; src: url("/assets/fonts/newsreader-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
@@ -242,7 +242,7 @@ html:not(.js) .panel + .panel { margin-top: 1rem; padding-top: 1rem; border-top:
   .finding { border: 0; padding: 0; margin-top: .2rem; }
   .links a[href^="http"]::after, .contact a[href^="http"]::after { content: " (" attr(href) ")"; font-family: var(--mono); font-size: .8em; }
   .contact a[href^="mailto:"]::after { content: " (kechun.wu@duke.edu)"; font-family: var(--mono); font-size: .8em; }
-  .links a[href^="/"]::after { content: " (kc31415.github.io" attr(href) ")"; font-family: var(--mono); font-size: .8em; }
+  .links a[href^="/"]::after { content: " (kechunwu.github.io" attr(href) ")"; font-family: var(--mono); font-size: .8em; }
   .cv li { margin-bottom: .3rem; break-inside: avoid; grid-template-columns: 6.5rem minmax(0, 1fr); }
   .reveal { opacity: 1 !important; transform: none !important; }
   a { text-decoration: none; }

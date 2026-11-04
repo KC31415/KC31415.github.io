@@ -21,9 +21,9 @@ import urllib.request
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlparse
 
-SITE = "https://kc31415.github.io"
+SITE = "https://kechunwu.github.io"
 OTHER_REPOS = ("/morning-brief", "/earnings-desk", "/ai-adoption-tracker")
-UA = "Mozilla/5.0 (compatible; kc31415.github.io link check)"
+UA = "Mozilla/5.0 (compatible; kechunwu.github.io link check)"
 
 
 class Collect(HTMLParser):

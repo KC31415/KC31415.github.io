@@ -1,6 +1,6 @@
-# kc31415.github.io
+# kechunwu.github.io
 
-Kechun Wu's personal site, served at https://kc31415.github.io.
+Kechun Wu's personal site, served at https://kechunwu.github.io.
 
 Plain HTML, CSS and vanilla JS. No framework, no build step, no trackers.
 

@@ -1,4 +1,4 @@
-/* kc31415.github.io: theme toggle, live strip, verification demo, SDK chart, section reveal. No dependencies. */
+/* kechunwu.github.io: theme toggle, live strip, verification demo, SDK chart, section reveal. No dependencies. */
 (function () {
   "use strict";
   var root = document.documentElement;
