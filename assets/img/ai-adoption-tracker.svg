@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <rect width="1200" height="750" fill="#e9edf2"/>
+  <rect x="0" y="0" width="1200" height="56" fill="#d5dbe3"/>
+  <circle cx="36" cy="28" r="9" fill="#b6bfcb"/><circle cx="64" cy="28" r="9" fill="#b6bfcb"/><circle cx="92" cy="28" r="9" fill="#b6bfcb"/>
+  <text x="600" y="380" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="56" font-weight="600" fill="#5b6675" text-anchor="middle">AI Adoption Tracker</text>
+  <text x="600" y="440" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" fill="#8792a1" text-anchor="middle">Screenshot coming soon</text>
+</svg>

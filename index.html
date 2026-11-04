@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kechun Wu | Economics &amp; Computer Science, Duke '27</title>
+  <meta name="description" content="Kechun Wu: Duke '27, B.S. Economics and B.S. Computer Science (AI/ML). Projects in market data, SEC filings and alternative data.">
+  <meta name="author" content="Kechun Wu">
+  <link rel="canonical" href="https://kc31415.github.io/">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kc31415.github.io/">
+  <meta property="og:title" content="Kechun Wu | Economics &amp; Computer Science, Duke '27">
+  <meta property="og:description" content="Projects in market data, SEC filings and alternative data.">
+  <meta property="og:image" content="https://kc31415.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1419" media="(prefers-color-scheme: dark)">
+
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top">Kechun Wu</a>
+      <nav aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== INTRO ===================== -->
+    <section id="top" class="wrap intro">
+      <p class="eyebrow">Duke University &middot; Class of 2027</p>
+      <h1>Kechun Wu</h1>
+      <p class="lede">
+        I study Economics and Computer Science (AI/ML concentration) at Duke, and I build
+        tools that turn market data, SEC filings and alternative data into research.
+        I'm interested in tech equity research, data-driven fundamental research, and AI product and strategy roles.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn" href="resume.pdf">Resume (PDF)</a>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="wrap">
+      <h2>Projects</h2>
+
+      <!--
+        ================================================================
+        PROJECT CARDS: EDIT HERE
+        Each project is one <article class="card"> ... </article> block.
+        To add a project, copy a whole block and change the text/links.
+        To change a screenshot, put an image in assets/img/ and update
+        the <img src="..."> (1200x750 or any 16:10 image fits best).
+        ================================================================
+      -->
+      <div class="cards">
+
+        <!-- ---------- Project 1: Morning Brief ---------- -->
+        <article class="card">
+          <img class="shot" src="assets/img/morning-brief.jpg" alt="Morning Brief screenshot" width="1200" height="750" loading="lazy">
+          <div class="card-body">
+            <h3>Morning Brief</h3>
+            <p>A public rebuild of the pre-open market dashboard I built during my UBS Global Markets internship. It is refreshed every weekday before the open.</p>
+            <p class="shows"><strong>What it shows:</strong> Building a scheduled data product that checks its own inputs (freshness, gaps, implausible moves, cross-source disagreement) before showing a number.</p>
+            <ul class="tags" aria-label="Tech stack">
+              <li>Python</li><li>pandas</li><li>Streamlit</li><li>yfinance / FRED / ECB</li><li>Claude API</li><li>GitHub Actions</li><li>Cloudflare Workers</li>
+            </ul>
+            <div class="links">
+              <a href="https://kc31415.github.io/morning-brief">Live site &rarr;</a>
+              <a href="https://github.com/KC31415/morning-brief">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ---------- Project 2: Earnings Desk ---------- -->
+        <article class="card">
+          <img class="shot" src="assets/img/earnings-desk.jpg" alt="Earnings Desk screenshot" width="1200" height="750" loading="lazy">
+          <div class="card-body">
+            <h3>Earnings Desk</h3>
+            <p>AI-written earnings notes generated from SEC filings, where every number is checked in code against SEC XBRL data. A published scorecard tracks how accurate the notes are.</p>
+            <p class="shows"><strong>What it shows:</strong> Pairing LLM-generated analysis with a deterministic, code-only verifier, and measuring how often the output can be trusted.</p>
+            <ul class="tags" aria-label="Tech stack">
+              <li>Python</li><li>pandas</li><li>SEC EDGAR / XBRL</li><li>Claude API</li><li>Streamlit</li><li>Plotly</li><li>GitHub Actions</li>
+            </ul>
+            <div class="links">
+              <a href="https://kc31415.github.io/earnings-desk">Live site &rarr;</a>
+              <a href="https://github.com/KC31415/earnings-desk">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ---------- Project 3: AI Adoption Tracker ---------- -->
+        <article class="card">
+          <img class="shot" src="assets/img/ai-adoption-tracker.svg" alt="AI Adoption Tracker screenshot" width="1200" height="750" loading="lazy">
+          <div class="card-body">
+            <h3>AI Adoption Tracker</h3>
+            <p>Tracks adoption of AI and data-infrastructure tools using alternative data: package downloads, hiring posts and GitHub activity. It tests whether these signals lead public companies' revenue.</p>
+            <p class="shows"><strong>What it shows:</strong> Turning free alternative data into signals and testing them against reported revenue with statistics set up before the data was pulled.</p>
+            <ul class="tags" aria-label="Tech stack">
+              <li>Python</li><li>pandas</li><li>SciPy</li><li>npm / PyPI / GitHub APIs</li><li>SEC XBRL</li><li>Streamlit</li>
+            </ul>
+            <div class="links">
+              <a href="https://kc31415.github.io/ai-adoption-tracker">Live site &rarr;</a>
+              <a href="https://github.com/KC31415/ai-adoption-tracker">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <!-- ================ END PROJECT CARDS ================ -->
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="wrap">
+      <h2>About</h2>
+      <div class="about">
+        <p>
+          I'm a student at Duke University (Class of 2027) pursuing a B.S. in Economics and a
+          B.S. in Computer Science with a concentration in AI/ML.
+        </p>
+        <p>
+          In summer 2026 I interned in Global Markets Sales &amp; Trading at UBS. My projects
+          sit where those two fields meet: applying software and machine learning to questions
+          about markets and companies.
+        </p>
+        <dl class="facts">
+          <div><dt>Education</dt><dd>Duke University, B.S. Economics &amp; B.S. Computer Science (AI/ML), 2027</dd></div>
+          <div><dt>Experience</dt><dd>UBS, Global Markets Sales &amp; Trading Summer Intern, 2026</dd></div>
+          <div><dt>Interests</dt><dd>Tech equity research, data-driven fundamental research, AI product &amp; strategy</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="wrap">
+      <h2>Contact</h2>
+      <p>The best way to reach me is by email.</p>
+      <!-- TODO: replace the email address and LinkedIn URL below with your own. -->
+      <ul class="contact">
+        <li><a href="mailto:your.email@example.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/your-linkedin-id/">LinkedIn</a></li>
+        <li><a href="https://github.com/KC31415">GitHub</a></li>
+        <li><a href="resume.pdf">Resume (PDF)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <p>&copy; <span id="year">2026</span> Kechun Wu</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
