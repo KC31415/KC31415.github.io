@@ -12,7 +12,7 @@
     if (!toggle) return;
     var t = effectiveTheme();
     toggle.querySelectorAll("[data-mode]").forEach(function (s) { s.classList.toggle("on", s.dataset.mode === t); });
-    toggle.setAttribute("aria-label", "Color theme: " + t + ". Switch to " + (t === "dark" ? "light" : "dark") + ".");
+    toggle.setAttribute("aria-label", "light / dark theme, currently " + t);
   }
   if (toggle) {
     toggle.addEventListener("click", function () {
@@ -228,7 +228,7 @@
       }
       svg.addEventListener("pointermove", at);
       svg.addEventListener("pointerdown", at);
-      svg.addEventListener("pointerleave", leave);
+      svg.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") leave(); });
       host.textContent = "";
       host.appendChild(svg);
       leave();
