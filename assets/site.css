@@ -222,10 +222,13 @@ html:not(.js) .panel + .panel { margin-top: 1rem; padding-top: 1rem; border-top:
 /* ---------- Print: a clean one-page summary ---------- */
 @media print {
   @page { margin: 14mm 16mm; }
-  html { font-size: 10.5pt; }
+  html { font-size: 9.5pt; }
+  body { line-height: 1.4; }
   :root, :root[data-theme="dark"] { --paper: #fff; --ink: #000; --muted: #444; --rule: #bbb; --accent: #000; }
   body { background: #fff; color: #000; }
-  .topbar, .live, figure, .skip, .stack, .limit, #about, .more, .colophon p:first-child { display: none !important; }
+  .topbar, .live, figure, .skip, .stack, .limit, #about, .more, .colophon { display: none !important; }
+  .section h2 { margin: .2rem 0 .3rem; }
+  .contact { margin-top: .3rem; }
   .masthead { padding: 0 0 .5rem; }
   .intro { font-size: 1.1rem; margin: .4rem 0; }
   h1 { font-size: 2rem; }
@@ -238,8 +241,9 @@ html:not(.js) .panel + .panel { margin-top: 1rem; padding-top: 1rem; border-top:
   .entry > p:not(.finding):not(.links):not(.question) { display: none; }
   .finding { border: 0; padding: 0; margin-top: .2rem; }
   .links a[href^="http"]::after, .contact a[href^="http"]::after { content: " (" attr(href) ")"; font-family: var(--mono); font-size: .8em; }
+  .contact a[href^="mailto:"]::after { content: " (kechun.wu@duke.edu)"; font-family: var(--mono); font-size: .8em; }
   .links a[href^="/"]::after { content: " (kc31415.github.io" attr(href) ")"; font-family: var(--mono); font-size: .8em; }
-  .cv li { margin-bottom: .35rem; break-inside: avoid; }
+  .cv li { margin-bottom: .3rem; break-inside: avoid; grid-template-columns: 6.5rem minmax(0, 1fr); }
   .reveal { opacity: 1 !important; transform: none !important; }
   a { text-decoration: none; }
 }
