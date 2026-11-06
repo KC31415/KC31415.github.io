@@ -234,6 +234,7 @@ html:not(.js) .panel + .panel { margin-top: 1rem; padding-top: 1rem; border-top:
 .pitch tr.total th, .pitch tr.total td { border-top: 1px solid var(--ink); }
 .pitch .desc { display: block; font-size: var(--step--1); color: var(--muted); line-height: 1.4; margin-top: .15rem; max-width: 22rem; }
 .table-note { margin: .5rem 0 1.25rem; }
+.scen-notes { margin-top: .8rem; }
 
 .risks { margin: 0 0 .5rem; }
 .risks dt { font-weight: 600; }

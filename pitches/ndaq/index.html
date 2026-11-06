@@ -67,7 +67,7 @@
   <h2>Why the market had it wrong</h2>
 
   <h3>It sold Nasdaq with the data names, not the exchanges</h3>
-  <p>In the week of the AI-driven selloff, from 30 January to 6 February 2026, Nasdaq’s forward P/E fell 12.7%, from 24.7x to 21.6x. That is in line with the data and analytics companies. Its exchange peers held up: ICE’s multiple fell 3.5%, while CME’s and Cboe’s rose.</p>
+  <p>In the week of the AI-driven selloff, from 30 January to 6 February 2026, Nasdaq’s forward P/E fell 12.7%. That is in line with the data and analytics companies. Its exchange peers held up: ICE’s multiple fell 3.5%, while CME’s and Cboe’s rose.</p>
 
   <figure class="chart" id="drawdown">
     <figcaption class="chart-head">
@@ -173,16 +173,20 @@
   <h3>Scenarios</h3>
   <div class="table-wrap">
     <table class="num scenarios">
-      <thead><tr><th scope="col">Scenario</th><th scope="col">FY27E EPS</th><th scope="col">Fwd P/E</th><th scope="col">Value</th><th scope="col">Return</th><th scope="col">Weight</th></tr></thead>
+      <thead><tr><th scope="col">Scenario</th><th scope="col">FY27E EPS</th><th scope="col">Sep-27 fwd EPS</th><th scope="col">Fwd P/E</th><th scope="col">Value</th><th scope="col">Return</th><th scope="col">Weight</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Bear<span class="desc">Enterprise go-lives slip, 15% tech drawdown, volumes normalize. Multiple at the exchange average.</span></th><td>$4.32</td><td>19.4x</td><td>$89</td><td>−5%</td><td>25%</td></tr>
-        <tr class="key"><th scope="row">Base</th><td>$4.69</td><td>22.7x</td><td>$116</td><td>+24%</td><td>50%</td></tr>
-        <tr><th scope="row">Bull<span class="desc">Verafin accelerates, strong index flows, AI monetization becomes visible. Multiple back to the pre-selloff level.</span></th><td>$4.89</td><td>25.3x</td><td>$137</td><td>+46%</td><td>25%</td></tr>
-        <tr class="total"><th scope="row">Probability-weighted</th><td></td><td></td><td>$115</td><td>+23%</td><td></td></tr>
+        <tr><th scope="row">Bear</th><td>$4.32</td><td>$4.58</td><td>19.4x</td><td>$89</td><td>−5%</td><td>25%</td></tr>
+        <tr class="key"><th scope="row">Base</th><td>$4.69</td><td>$5.13</td><td>22.7x</td><td>$116</td><td>+24%</td><td>50%</td></tr>
+        <tr><th scope="row">Bull</th><td>$4.89</td><td>$5.41</td><td>25.3x</td><td>$137</td><td>+46%</td><td>25%</td></tr>
+        <tr class="total"><th scope="row">Weighted</th><td></td><td></td><td></td><td>$115</td><td>+23%</td><td></td></tr>
       </tbody>
     </table>
   </div>
-  <p class="meta table-note">Model, Scenarios sheet. These are operating cases, not bounds: the price can fall below $89, for example in a broad selloff or if AI disruption shows up in bookings.</p>
+  <ul class="plain scen-notes">
+    <li><strong>Bear:</strong> enterprise go-lives slip, a 15% tech drawdown, volumes normalize; the multiple falls to the exchange average.</li>
+    <li><strong>Bull:</strong> Verafin accelerates, strong index flows, AI monetization becomes visible; the multiple returns to its pre-selloff level (27 January 2026).</li>
+  </ul>
+  <p class="meta table-note">Weighted = probability-weighted. Value = forward P/E × September 2027 forward EPS (25% of FY27E plus 75% of FY28E in each scenario). Model, Scenarios sheet. These are operating cases, not bounds: the price can fall below $89, for example in a broad selloff or if AI disruption shows up in bookings.</p>
 
   <h3>80% price range</h3>
   <div class="table-wrap">
@@ -229,13 +233,21 @@
 </section>
 
 <!-- ===================== 6. WHAT'S HAPPENED SINCE ===================== -->
-<!-- PLACEHOLDER for Kechun to fill in. The section is hidden until you do:
-     write the update in the <p> below (date it, e.g. "As of [date]: ..."),
-     then delete the `hidden` attribute on the <section>. Keep the figures
-     above unchanged; they are as of the 18-Sep-2026 close. -->
-<section id="since" class="section" hidden>
+<!-- Update section: the only part of this page with figures from after 18-Sep-2026.
+     Everything above stays as of the original pitch. Date each update. -->
+<section id="since" class="section">
   <h2>What’s happened since</h2>
-  <p></p>
+  <p class="meta">Updated 6 November 2026. The figures above are unchanged from the original pitch.</p>
+  <p>The stock closed at $106.83 on 5 November 2026, up 14% from $93.54 and a little more than halfway to the $116 target. About half the move came on 22 October, the day of the Q3 results, when it rose 7.5%.</p>
+  <p>The Q3 results support the thesis:</p>
+  <ul class="plain">
+    <li><strong>FinTech ARR grew 18%,</strong> a record for Nasdaq, in the quarter I expected tough Calypso comparisons to make FinTech look weaker. That is well clear of the 13% exit trigger. ARR across the company grew 12% (14% organic).</li>
+    <li><strong>Financial Crime (Verafin) revenue grew 23%</strong>, and Nasdaq said its ARR growth accelerated, so the second exit trigger hasn’t fired. Enterprise signings reached 12 for the year, against 9 in all of 2025.</li>
+    <li><strong>Management again said</strong> sales cycles, contract term lengths and bookings mix were consistent.</li>
+    <li><strong>Non-GAAP EPS was $1.04</strong>, up 18%.</li>
+  </ul>
+  <p>One point against: Nasdaq raised its 2026 expense guidance again, to $2.550–2.580bn, against the $2,550m in my model. It cited a recent acquisition and stronger revenue. Next I’m watching the 2027 expense guidance with the Q4 results in late January. Growth above 8% without matching revenue would be an exit trigger; guidance inside 5–8% with Solutions growth in or above 9–12% is the catalyst I expect to close the rest of the gap to $116.</p>
+  <p class="meta table-note">Sources: Nasdaq Q3 2026 <a href="https://www.sec.gov/Archives/edgar/data/1120193/000112019326000017/earningsrelease3q26ex-991.htm">earnings release</a> and call, 22 October 2026; closing prices from Yahoo Finance.</p>
 </section>
 
 <!-- ===================== 7. DOWNLOADS ===================== -->
