@@ -204,6 +204,55 @@ html:not(.js) .panel + .panel { margin-top: 1rem; padding-top: 1rem; border-top:
 .colophon a { color: var(--muted); }
 .colophon a:hover { color: var(--accent); }
 
+/* ---------- Pitch pages (body.pitch) ---------- */
+.pitch h1 { font-size: clamp(1.953rem, 6vw, 2.441rem); }
+.pitch .topbar { margin-bottom: 3rem; }
+.pitch figure { margin-inline: 0; }
+.crumb { margin-bottom: .75rem; }
+.crumb a { color: var(--muted); }
+.pitch .asof { color: var(--ink); margin: 1rem 0 0; }
+.pitch .intro { margin: 1rem 0; }
+.provenance { margin: 0; }
+.pitch .section { padding-top: 2.75rem; }
+.pitch .section h3 { font-size: var(--step-1); margin: 2rem 0 .6rem; }
+.pitch .section h2 + h3 { margin-top: 0; }
+.plain { margin: 0 0 1rem; padding-left: 1.1rem; }
+.plain li { margin-bottom: .5rem; }
+.downloads { list-style: none; padding: 0; }
+.downloads .meta { margin-left: .4rem; }
+
+.table-wrap { overflow-x: auto; margin: 1.25rem 0 0; }
+.pitch table { width: 100%; border-collapse: collapse; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.pitch caption { text-align: left; padding-bottom: .4rem; }
+.pitch th, .pitch td { padding: .4rem .6rem .4rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; text-align: left; }
+.pitch th { font-weight: 400; }
+.pitch thead th { font-family: var(--mono); font-size: var(--step--1); color: var(--muted); }
+.pitch td { font-family: var(--mono); font-size: var(--step--1); text-align: right; white-space: nowrap; padding-top: .55rem; }
+.pitch td:last-child, .pitch th:last-child { padding-right: 0; }
+.pitch table.num thead th:not(:first-child) { text-align: right; }
+.pitch tr.key th, .pitch tr.key td { font-weight: 600; }
+.pitch tr.total th, .pitch tr.total td { border-top: 1px solid var(--ink); }
+.pitch .desc { display: block; font-size: var(--step--1); color: var(--muted); line-height: 1.4; margin-top: .15rem; max-width: 22rem; }
+.table-note { margin: .5rem 0 1.25rem; }
+
+.risks { margin: 0 0 .5rem; }
+.risks dt { font-weight: 600; }
+.risks dd { margin: 0 0 .8rem; }
+
+.chart-svg text.grp { fill: var(--ink); font-style: italic; font-family: var(--serif); font-size: 14px; }
+.chart-svg text.name { fill: var(--ink); font-size: 13px; }
+.chart-svg text.val { font-size: 13px; }
+.chart-svg text.key { fill: var(--accent); font-weight: 500; }
+.chart-svg .bar { fill: var(--muted); }
+.chart-svg .bar.key { fill: var(--accent); }
+
+@media (max-width: 600px) {
+  .pitch .topbar { margin-bottom: 2rem; }
+  .pitch .desc { max-width: 14rem; }
+  .pitch th, .pitch td { padding-right: .4rem; }
+  .pitch td, .pitch thead th { font-size: .7rem; }
+}
+
 /* ---------- Motion ---------- */
 .reveal { opacity: 0; transform: translateY(8px); transition: opacity .2s ease, transform .2s ease; }
 .reveal.in { opacity: 1; transform: none; }
@@ -246,4 +295,26 @@ html:not(.js) .panel + .panel { margin-top: 1rem; padding-top: 1rem; border-top:
   .cv li { margin-bottom: .3rem; break-inside: avoid; grid-template-columns: 6.5rem minmax(0, 1fr); }
   .reveal { opacity: 1 !important; transform: none !important; }
   a { text-decoration: none; }
+
+  /* Homepage pitch entry: one line plus the page link, so the summary stays on one page. */
+  #pitch h2 { display: none; }
+  #pitch .print-hide, #ndaq .links a + a, #ndaq .question { display: none; }
+  #pitch { padding-top: 0 !important; margin-top: 0 !important; }
+
+  /* Pitch pages print in full, not as the one-page summary above. */
+  .pitch .crumb { display: none; }
+  .pitch figure, .pitch .colophon { display: block !important; }
+  .pitch .colophon { margin-top: 1rem; padding: .5rem 0 0; border-top: 1px solid var(--rule); }
+  .pitch .colophon p + p { display: none; }
+  .pitch .section { padding-top: .8rem; margin-top: .6rem; border-top: 1px solid var(--rule); }
+  .pitch h1 { font-size: 1.8rem; }
+  .pitch h2 { font-size: 1.25rem; margin-bottom: .4rem; }
+  .pitch .section h3 { display: block; font-size: 1.05rem; margin: .8rem 0 .3rem; }
+  .pitch figure { break-inside: avoid; margin: .6rem 0; max-width: 15cm; }
+  .pitch .chart-svg .bar { fill: #aaa; }
+  .pitch .chart-svg .bar.key { fill: #000; }
+  .pitch .table-wrap, .pitch tr, .pitch dt, .pitch dd { break-inside: avoid; }
+  .pitch h2, .pitch h3 { break-after: avoid; }
+  .pitch .table-wrap { overflow: visible; }
+  .pitch .downloads a[href^="/"]::after { content: " (kechunwu.github.io" attr(href) ")"; font-family: var(--mono); font-size: .8em; }
 }
