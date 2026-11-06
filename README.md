@@ -9,6 +9,8 @@ Plain HTML, CSS and vanilla JS. No framework, no build step, no trackers.
 | Path | What it is |
 |---|---|
 | `index.html` | The whole page. Each project is one `<article class="entry">` under "SELECTED WORK". |
+| `pitches/ndaq/index.html` | NDAQ stock pitch page. Figures come only from the deck and model in `pitches/ndaq/source/` (as of the 18-Sep-2026 close). |
+| `pitches/ndaq/source/` | The pitch deck (PDF) and model (Excel) offered as downloads. |
 | `assets/site.css` | Styles: color tokens at the top (light, then dark), print stylesheet at the bottom. |
 | `assets/site.js` | Theme toggle, live Morning Brief strip, Earnings Desk demo, SDK chart, section reveal. |
 | `assets/fonts/` | Newsreader and JetBrains Mono, subset and self-hosted (SIL OFL; licenses included). |
